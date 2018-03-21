@@ -1,2 +1,5 @@
 *.o
 *.c
+nimcache/
+camera
+picture
