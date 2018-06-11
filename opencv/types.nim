@@ -666,6 +666,9 @@ type
   TSeq* {.pure, final.} = object
     flags*: cint              # Miscellaneous flags.
     headerSize*: cint        # Size of sequence header.
+    hPrev*: ptr TSeq         # 2nd next sequence.
+    hNext*: ptr TSeq         # 2nd next sequence.
+    vPrev*: ptr TSeq         # 2nd next sequence.
     vNext*: ptr TSeq         # 2nd next sequence.
     total*: cint              # Total number of elements.
     elemSize*: cint          # Size of sequence element in bytes.
@@ -697,6 +700,9 @@ type
   TCvSet* {.pure, final.} = object
     flags*: cint              # Miscellaneous flags.
     headerSize*: cint        # Size of sequence header.
+    hPrev*: ptr TSeq         # 2nd next sequence.
+    hNext*: ptr TSeq         # 2nd next sequence.
+    vPrev*: ptr TSeq         # 2nd next sequence.
     vNext*: ptr TSeq         # 2nd next sequence.
     total*: cint              # Total number of elements.
     elemSize*: cint          # Size of sequence element in bytes.
@@ -762,6 +768,9 @@ type
   TGraph* {.pure, final.} = object
     flags*: cint              # Miscellaneous flags.
     headerSize*: cint        # Size of sequence header.
+    hPrev*: ptr TSeq         # 2nd next sequence.
+    hNext*: ptr TSeq         # 2nd next sequence.
+    vPrev*: ptr TSeq         # 2nd next sequence.
     vNext*: ptr TSeq         # 2nd next sequence.
     total*: cint              # Total number of elements.
     elemSize*: cint          # Size of sequence element in bytes.
@@ -785,6 +794,9 @@ type
   TChain* {.pure, final.} = object
     flags*: cint              # Miscellaneous flags.
     headerSize*: cint        # Size of sequence header.
+    hPrev*: ptr TSeq         # 2nd next sequence.
+    hNext*: ptr TSeq         # 2nd next sequence.
+    vPrev*: ptr TSeq         # 2nd next sequence.
     vNext*: ptr TSeq         # 2nd next sequence.
     total*: cint              # Total number of elements.
     elemSize*: cint          # Size of sequence element in bytes.
@@ -799,6 +811,9 @@ type
   TContour* {.pure, final.} = object
     flags*: cint              # Miscellaneous flags.
     headerSize*: cint        # Size of sequence header.
+    hPrev*: ptr TSeq         # 2nd next sequence.
+    hNext*: ptr TSeq         # 2nd next sequence.
+    vPrev*: ptr TSeq         # 2nd next sequence.
     vNext*: ptr TSeq         # 2nd next sequence.
     total*: cint              # Total number of elements.
     elemSize*: cint          # Size of sequence element in bytes.
