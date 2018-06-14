@@ -227,10 +227,10 @@ always generates a 32-bit random number, regardless of the platform.
  */
 CV_INLINE unsigned cvRandInt( CvRNG* rng )
 {
-   uint64 temp = *rng;
-   temp = (uint64)(unsigned)temp*CV_RNG_COEFF + (temp >> 32);
-   *rng = temp;
-   return (unsigned)temp;
+    uint64 temp = *rng;
+    temp = (uint64)(unsigned)temp*CV_RNG_COEFF + (temp >> 32);
+    *rng = temp;
+    return (unsigned)temp;
 }
 
 /** @brief Returns a floating-point random number and updates RNG.
