@@ -11,8 +11,10 @@ requires "nimgen >= 0.1.4"
 
 import distros
 
-before build:
-    exec "nimgen opencv.cfg"
+task gen, "gen bindings":
+    exec "nimgen -f opencv.cfg"
+    exec "nim c -c opencv/core.nim"
+    # exec "nim c opencv/types.nim"
 
 task test, "Run tests":
     withDir("tests"):
