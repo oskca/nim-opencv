@@ -244,7 +244,7 @@ proc updateWindow*(windowName: cstring){.cdecl, importc: "cvUpdateWindow",
 
 # start capturing frames from video file
 proc createFileCapture*(filename: cstring): ptr TCapture{.
-    importc: "cvCreateFileCapture", dynlib: highguidll.}
+    importc: "cvCreateFileCapture", dynlib: videoiodll.}
 const
   CAP_ANY* = 0           # autodetect
   CAP_MIL* = 100         # MIL proprietary drivers
