@@ -42,16 +42,19 @@
 {.deadCodeElim: on.}
 when defined(windows):
   const
-    highguidll = "(lib|)opencv_highgui(341|)(d|).dll"
-    videoiodll = "(lib|)libopencv_videoio(341|)(d|).dll"
+    highguidll = "(lib|)opencv_highgui(|341|345)(d|).dll"
+    videoiodll = "(lib|)libopencv_videoio(|341|345)(|d).dll"
+    imgcodecsdll = "(lib|)libopencv_imgcodecs(|341|345)(|d).dll"
 elif defined(macosx):
   const
     highguidll = "libopencv_highgui.dylib"
     videoiodll = "libopencv_videoio.dylib"
+    imgcodecsdll = "libopencv_imgcodecs.dylib"
 else:
   const
     highguidll = "libopencv_highgui.so"
     videoiodll = "libopencv_videoio.so"
+    imgcodecsdll = "libopencv_imgcodecs.so"
 
 import core
 
@@ -193,9 +196,9 @@ const                       # 8bit, color or not
 #  unless CV_LOAD_IMAGE_ANYDEPTH is specified images are converted to 8bit
 #
 proc loadImage*(filename: cstring; iscolor: cint): ptr TIplImage{.cdecl,
-    importc: "cvLoadImage", dynlib: highguidll.}
+    importc: "cvLoadImage", dynlib: imgcodecsdll.}
 #proc loadImageM*(filename: cstring; iscolor: cint): MatPtr{.cdecl,
-#    importc: "cvLoadImageM", dynlib: highguidll.}
+#    importc: "cvLoadImageM", dynlib: imgcodecsdll.}
 const
   IMWRITE_JPEG_QUALITY* = 1
   IMWRITE_PNG_COMPRESSION* = 16
