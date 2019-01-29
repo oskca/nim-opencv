@@ -43,8 +43,8 @@
 {.deadCodeElim: on.}
 when defined(windows):
   const
-    coredll = "(lib|)opencv_core(341|)(|d).dll"
-    imgprocdll = "(lib|)opencv_imgproc(341|)(d|).dll"
+    coredll = "(lib|)opencv_core(|341|345)(|d).dll"
+    imgprocdll = "(lib|)opencv_imgproc(|341|345)(|d).dll"
 elif defined(macosx):
   const
     coredll = "libopencv_core.dylib"
