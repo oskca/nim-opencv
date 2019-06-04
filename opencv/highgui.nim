@@ -43,8 +43,8 @@
 when defined(windows):
   const
     highguidll = "(lib|)opencv_highgui(|341|345)(d|).dll"
-    videoiodll = "(lib|)libopencv_videoio(|341|345)(|d).dll"
-    imgcodecsdll = "(lib|)libopencv_imgcodecs(|341|345)(|d).dll"
+    videoiodll = "(lib|)opencv_videoio(|341|345)(|d).dll"
+    imgcodecsdll = "(lib|)opencv_imgcodecs(|341|345)(|d).dll"
 elif defined(macosx):
   const
     highguidll = "libopencv_highgui.dylib"
